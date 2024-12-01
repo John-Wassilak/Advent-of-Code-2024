@@ -4,7 +4,16 @@
 #include <curl/curl.h>
 
 // https://adventofcode.com/2024/day/1
+//
 // gcc 12-01.c -o 12-01 -lcurl && ./12-01
+//
+// or
+//
+// gcc -DDEBUG -g 12-01.c -o 12-01 -lcurl && \
+//	 valgrind --trace-children=yes --track-fds=yes \\
+//   --track-origins=yes --leak-check=full --show-leak-kinds=all \\
+//   -s ./12-01
+
 
 // dont judge. I just wanted to get the answers, no refactoring has been done.
 
@@ -58,8 +67,11 @@ struct MemoryStruct *pull_input() {
   if (res != CURLE_OK) {
     fprintf(stderr, "curl_easy_perform() failed: %s\n",
             curl_easy_strerror(res));
+    free(chunk->memory);
+    free(chunk);
     chunk = NULL;
   }
+
   curl_easy_cleanup(curl_handle);
   curl_global_cleanup();
 
@@ -250,19 +262,24 @@ long calc_part_2_output(struct PuzzleInput *input) {
 int main() {
     struct MemoryStruct *input;
     struct PuzzleInput *parsed_input;
-    
+
     input = pull_input();
 
     parsed_input = parse_input(input->memory);
+
     bubbleSort(parsed_input->left);
     bubbleSort(parsed_input->right);
+
     print_puzzle_input(parsed_input);
+
     long result = calc_puzzle_output(parsed_input);
     printf("result (part 1): %ld\n", result);
+
     long pt_2_result = calc_part_2_output(parsed_input);
     printf("result (part 2): %ld\n", pt_2_result);
     
     free_puzzle_input(parsed_input);
+    free(input->memory);
     free(input);
     return 0;
 }
