@@ -7,7 +7,7 @@ Solutions to the AoC 24 puzzles.
 - Also means everything will be pretty ugly...
 
 ## Solutions
-[Day 1] (https://adventofcode.com/2024/day/1) : [C] (blob/master/12-01.c)
-[Day 2] (https://adventofcode.com/2024/day/2) : [Python] (blob/master/12-02.py)
-[Day 3] (https://adventofcode.com/2024/day/3) : [Guile Scheme] (blob/master/12-03.scm)
-[Day 4] (https://adventofcode.com/2024/day/4) : [Java] (blob/master/12-04.java)
+- [Day 1](https://adventofcode.com/2024/day/1) : [C](12-01.c)
+- [Day 2](https://adventofcode.com/2024/day/2) : [Python](12-02.py)
+- [Day 3](https://adventofcode.com/2024/day/3) : [Guile Scheme](12-03.scm)
+- [Day 4](https://adventofcode.com/2024/day/4) : [Java](12-04.java)
