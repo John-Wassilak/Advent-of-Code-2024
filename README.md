@@ -15,7 +15,7 @@ Solutions to the AoC 24 puzzles.
 - [Day 6](https://adventofcode.com/2024/day/6) : [Rust](12-06.rs)
 - [Day 7](https://adventofcode.com/2024/day/7) : [Haskell](12-07.hs)
 - [Day 8](https://adventofcode.com/2024/day/8) : [C++](12-08.cpp)
-- [Day 9](https://adventofcode.com/2024/day/9) : [Zig]()
+- [Day 9](https://adventofcode.com/2024/day/9) : [Zig](12-09.zig)
 - [Day 10](https://adventofcode.com/2024/day/10) : [Scala]()
 - [Day 11](https://adventofcode.com/2024/day/11) : [Perl]()
 - [Day 12](https://adventofcode.com/2024/day/12) : [OCaml]()
